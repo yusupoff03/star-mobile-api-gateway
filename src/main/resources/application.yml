@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+        - id: NOTIFICATION-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification/**
+
+eureka:
+  client:
+    service-url:
+      defaultUrl: ${EUREKA_URI:http://localhost:8761/eureka/}
+    instance:
+      preferIpAddress: true
+
