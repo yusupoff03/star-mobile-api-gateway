@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.1.1'
+	id 'org.springframework.boot' version '3.0.7'
 	id 'io.spring.dependency-management' version '1.1.0'
 }
 
@@ -16,10 +16,11 @@ repositories {
 }
 
 ext {
-	set('springCloudVersion', "2022.0.3")
+	set('springCloudVersion', "2022.0.1")
 }
 
 dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
