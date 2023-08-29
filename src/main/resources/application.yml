@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultUrl: ${EUREKA_URI:http://localhost:8761/eureka/}
+      defaultUrl: ${EUREKA_URI:http://161.35.16.131:8761/eureka/}
     instance:
       preferIpAddress: true
 
